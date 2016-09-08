@@ -1,0 +1,62 @@
+
+#background_image{
+	background-image: url(/static/logga.jpg);
+	size: ;
+	height:57px;
+	width:88%;
+}
+
+.container{
+	margin: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	display: table;
+}
+
+a.list-group-item:hover{color:#0092D2;
+	background-color: #CCCCCC;
+	f
+
+}
+a.list-group-item, a {font-family: Josefin+Sans, light;
+	font-size:1em;
+}
+
+h1{
+	font-family: Josefin+Sans, light;
+	font-size:2em;
+	color: #0092D2;
+}
+
+p{
+	font-family: Lato;
+	font-size: 1em;
+}
+
+.list-group{
+	font-family:Lato
+	font-size: 20px
+	color:#CCCCCC;
+}
+
+#copy{
+	font-size: 12px;
+}
+
+.btn.btn-success{
+	background-color: #0092D2;
+	font-color: #CCCCCC;
+}
+
+.btn.btn-success:active{
+	background-color: #CCCCCC;
+
+}
+
+.navbar-default{background-color: #FFFFFF}
+
+#content{padding-bottom:50px;
+	}
