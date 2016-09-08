@@ -25,7 +25,7 @@
 			<div class="list-group" align="center">
 
 			{% for quiz in quizzes %}
-				<a href="#" class="list-group-item"> {{quiz.name}} </a>
+				<a href="{% url "quiz_page" quiz.quiz_number %}" class="list-group-item"> {{quiz.name}} </a>
 
 			{%endfor%}
 
