@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-from django.shortcuts import render
+
 
 quizzes = [
 {"quiz_number":1,
@@ -15,7 +15,10 @@ quizzes = [
 "description":"HAckerhistoria är viktig, kan du den?"},
 ]
 def startpage (request):
-	return render(request, "quiz/start.html")
+	context = {
+	"quizzes":quizzes,
+	}
+	return render(request, "quiz/start.html", context)
 def quiz(request):
 	return render(request, "quiz/quiz.html")
 def question(request):
