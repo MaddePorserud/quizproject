@@ -13,9 +13,6 @@
 </head>
 <body>
 
-{% for quiz in quizzes %}
-	<p>{{quiz.name}}</p>
-{%endfor%}
 
 	<div class="container" id="content">
 		
@@ -26,9 +23,13 @@
 			Nedan finns tre test med olika frågor om jämställdhet. Det är bara att testa -  Lycka till! </p>
 			<div id="background_image"></div>
 			<div class="list-group" align="center">
-				<a href="#" class="list-group-item"> Quiz 1 </a>
-				<a href="#" class="list-group-item"> Quiz 2 </a>
-				<a href="#" class="list-group-item"> Quiz 3 </a>
+
+			{% for quiz in quizzes %}
+				<a href="#" class="list-group-item"> {{quiz.name}} </a>
+
+			{%endfor%}
+
+				
 
 			</div>
 			<div class = "navbar navbar-default navbar-fixed-bottom">
