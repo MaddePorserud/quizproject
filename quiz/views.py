@@ -56,7 +56,7 @@ def completed(request, quiz_number):
 	for question_number, answer in saved_answers.items():
 		correct_answer = questions[int(question_number)-1].correct
 		if correct_answer==answer:
-			num_correct_answer +=1
+			num_correct_answers +=1
 	context = {
 	"correct":num_correct_answers,
 	"total":questions.count(),
