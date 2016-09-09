@@ -32,11 +32,45 @@ def question(request, quiz_number, question_number):
 	}
 	return render(request, "quiz/question.html",context)
 
-def answer(request, quiz_number, question_number):
+def question_answer(request, quiz_number, question_number):
 	saved_answers = request.session.get(quiz_number,{})
 	answer = int(request.POST["answer"])
 	saved_answers[question_number] = answer
 	request.session[quiz_number] = saved_answers
+
+	answer = int(request.POST["answer"])
+	quiz = Quiz.objects.get(quiz_number=quiz_number)
+	questions = quiz.questions.all()
+	question = questions[int(question_number)-1]
+	correct_answer = question.correct
+	if correct_answer==1:
+		answer_=question.answer1
+	elif correct_answer==2:
+		answer_=question.answer2
+	elif correct_answer==3:
+		answer_=question.answer3
+
+	if correct_answer==answer:
+		context={
+		"Rubrik":"Du har svarat rätt", 
+		"answer":answer_,
+		"quiz":quiz,
+		"question_number":question_number,
+		 }
+		return render(request,"quiz/question_answer.html", context)
+	else:
+		context={
+		"Rubrik":"Du har svarat fel",
+		"answer":answer_,
+		"quiz":quiz,
+		"question_number":question_number,}
+		return render(request,"quiz/question_answer.html", context)
+		
+
+
+	
+
+def answer(request, quiz_number, question_number):
 
 	question_number=int(question_number)
 	quiz = Quiz.objects.get(quiz_number=quiz_number)

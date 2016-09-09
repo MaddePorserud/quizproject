@@ -15,22 +15,21 @@
 <body>
 	<div class="container">
 		<h1> Fråga {{question_number}} </h1>
-		<p> Välj ett utav svarsalternativen nedan </p>
+	
 		<p> {{question}} </p>
 
-		<form action="{% url "question_answer_page" quiz.quiz_number question_number %}" method="post">
+		<form action="{% url "answer_page" quiz.quiz_number question_number %}" method="post">
 			{% csrf_token %}
 
-			<div class="row">
-				<div class="col-md-4" style="border:1px  solid #CCC;"> <input type="radio" name="answer" value="1"> {{answer1}}</div>
-				<div class="col-md-4" style="border:1px  solid #CCC;"> <input type="radio" name="answer" value="2">{{answer2}} </div>
-				<div class="col-md-4" style="border:1px  solid #CCC;"> <input type="radio" name="answer" value="3">{{answer3}} </div>
-			</div>
+			<p>{{Rubrik}}. Rätt svar var {{answer}}. </p>
+
+				
+			
 			<div align="center">
 				<button type="submit" class="btn btn-success"> Nästa</button>
 			</div>
 		</form>
-
+</div>
 
 
 		<div class = "navbar navbar-default navbar-fixed-bottom">
