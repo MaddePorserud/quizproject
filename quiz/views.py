@@ -56,6 +56,7 @@ def question_answer(request, quiz_number, question_number):
 		"answer":answer_,
 		"quiz":quiz,
 		"question_number":question_number,
+		"question":question.question,
 		 }
 		return render(request,"quiz/question_answer.html", context)
 	else:
@@ -63,7 +64,8 @@ def question_answer(request, quiz_number, question_number):
 		"Rubrik":"Du har svarat fel",
 		"answer":answer_,
 		"quiz":quiz,
-		"question_number":question_number,}
+		"question_number":question_number,
+		"question":question.question,}
 		return render(request,"quiz/question_answer.html", context)
 		
 
