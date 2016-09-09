@@ -18,30 +18,36 @@
 		<p> Välj ett utav svarsalternativen nedan </p>
 		<p> {{question}} </p>
 
-		<div class="row">
-			<div class="col-md-4" style="border:1px  solid #CCC;"> {{answer1}} </div>
-			<div class="col-md-4" style="border:1px  solid #CCC;"> {{answer2}} </div>
-			<div class="col-md-4" style="border:1px  solid #CCC;"> {{answer3}} </div>
-			<div align="center">
-				<a href="{% url 'completed_page' quiz_number %}" type="button" class="btn btn-success"> Nästa fråga</a>
-			</div>
+		<form action = "{% url "answer_page" quiz.quiz_number question_number %}" method="post">
+			{% csrf_token %}
 
-			<div class = "navbar navbar-default navbar-fixed-bottom">
-				<div class="container">
-					<p id="copy" class="pull-left"> &copy; 2016 Madelen Porserud <br> <a href="femaleleaderengineer.se"> www.femaleleaderengineer.se </a> </br> </p>
-					<img src="/static/Logotype.png" class="pull-right">
-					
-				</div>
+			<div class="row">
+			<div class="col-md-4" style="border:1px  solid #CCC;"> <input type="radio" name="answer" value="1"> {{answer1}}</div>
+				<div class="col-md-4" style="border:1px  solid #CCC;"> <input type="radio" name="answer" value="2">{{answer2}} </div>
+				<div class="col-md-4" style="border:1px  solid #CCC;"> <input type="radio" name="answer" value="3">{{answer3}} </div>
 			</div>
+		</form>
 
+		<div align="center">
+			<button type="submit" class="btn btn-success"> Nästa fråga</button>
 		</div>
 
-		<!-- jQuery library -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<div class = "navbar navbar-default navbar-fixed-bottom">
+			<div class="container">
+				<p id="copy" class="pull-left"> &copy; 2016 Madelen Porserud <br> <a href="femaleleaderengineer.se"> www.femaleleaderengineer.se </a> </br> </p>
+				<img src="/static/Logotype.png" class="pull-right">
 
-		<!-- Latest compiled JavaScript -->
-		<script src="/static/js/bootstrap.min.js"></script>
-	</body>
-	</html>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="/static/js/bootstrap.min.js"></script>
+</body>
+</html>
 
 
