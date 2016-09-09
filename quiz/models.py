@@ -6,6 +6,8 @@ class Quiz(models.Model):
 		quiz_number = models.PositiveIntegerField()
 		name = models.CharField(max_length=100)
 		description = models.TextField()
+		def __str__(self):
+			return self.name
 		# Anger här information om vad de olika objekten i klassen kommer
 		# innehålla. GEnom att speca Integer (Siffra) lagras ett anpassat område för detta
 
