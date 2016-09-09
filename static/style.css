@@ -48,7 +48,8 @@ p{
 
 .btn.btn-success{
 	background-color: #0092D2;
-	font-color: #CCCCCC;
+	color:"white";
+	border-color: #CCCCCC;
 }
 
 .btn.btn-success:active{
