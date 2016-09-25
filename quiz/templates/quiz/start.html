@@ -26,6 +26,7 @@
 
 			{% for quiz in quizzes %}
 				<a href="{% url "quiz_page" quiz.quiz_number %}" class="list-group-item"> {{quiz.name}} </a>
+			{%empty %} <p><em>Det finns ännu inga frågesporter. </em></p>
 
 			{%endfor%}
 
