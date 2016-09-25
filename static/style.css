@@ -16,6 +16,10 @@
 	display: table;
 }
 
+.row{padding:5px;}
+
+.col-md-4{margin-bottom:5px;}
+
 a.list-group-item:hover{color:#0092D2;
 	background-color: #CCCCCC;
 	
