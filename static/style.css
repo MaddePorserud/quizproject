@@ -18,7 +18,7 @@
 
 a.list-group-item:hover{color:#0092D2;
 	background-color: #CCCCCC;
-	f
+	
 
 }
 a.list-group-item, a {font-family: Josefin+Sans, light;
@@ -32,8 +32,9 @@ h1{
 }
 
 p{
-	font-family: Lato;
-	font-size: 1em;
+	font-family: Josefin+Sans,light;
+	font-size: 1em
+	color:#CCCCCC;
 }
 
 .list-group{
